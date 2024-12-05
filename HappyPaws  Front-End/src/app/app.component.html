@@ -1,0 +1,181 @@
+<!-- Barra de herramientas -->
+<mat-toolbar color="primary" *ngIf="verificar() && (role !== '' || cerrar())">
+    <!-- Menú desplegable de todos los ítems -->
+    <button mat-button [matMenuTriggerFor]="menuItems">
+      <mat-icon>menu</mat-icon>Menú
+    </button>  
+  
+    <!-- Definición del menú desplegable de todos los ítems -->
+    <mat-menu #menuItems="matMenu">
+      <!-- Menús individuales -->
+      <button mat-menu-item *ngIf="isAdmin() || isCustomer()" [matMenuTriggerFor]="menuUsuario">
+        <mat-icon>person</mat-icon>Usuario
+      </button>
+      <button mat-menu-item *ngIf="isAdmin()"[matMenuTriggerFor]="menuRol">
+        <mat-icon>https</mat-icon>Roles
+      </button>
+      <button mat-menu-item *ngIf="isAdmin() || isAlbergue() || isAdmin()"[matMenuTriggerFor]="menuAlbergue">
+        <mat-icon>store</mat-icon>Albergues
+      </button>
+      <button mat-menu-item *ngIf="isAdmin() || isCustomer() || isAlbergue()" [matMenuTriggerFor]="menuCita">
+        <mat-icon>meeting_room</mat-icon>Citas
+      </button>
+      <button mat-menu-item *ngIf="isAdmin() || isCustomer() || isAlbergue()|| isAdmin()" [matMenuTriggerFor]="menuComprobante">
+        <mat-icon>list_alt</mat-icon>Comprobantes
+      </button>
+      <button mat-menu-item *ngIf="isAdmin() || isCustomer() || isAdmin() || isAlbergue()" [matMenuTriggerFor]="menuComentario">
+        <mat-icon> mail_outline</mat-icon>Comentarios
+      </button>
+      <button mat-menu-item *ngIf="isAdmin() || isCustomer() || isAlbergue()|| isAdmin()" [matMenuTriggerFor]="menuDonacion">
+        <mat-icon>attach_money</mat-icon>Donaciones
+      </button>
+      <button mat-menu-item *ngIf="isAdmin() ||isAlbergue() || isAdmin() || isCustomer()"[matMenuTriggerFor]="menuMascota">
+        <mat-icon>pets icon</mat-icon>Mascotas
+      </button>
+      <button mat-menu-item  *ngIf="isAdmin() || isCustomer()" [matMenuTriggerFor]="menuNotificacion">
+        <mat-icon>question_answer</mat-icon>Notificaciones
+      </button>
+      <button mat-menu-item [matMenuTriggerFor]="menuSalir">
+        <mat-icon>logout</mat-icon>Sesión
+      </button>
+    </mat-menu>
+  
+    <!-- Menú de Usuarios -->
+    <mat-menu #menuUsuario="matMenu">
+      <button mat-menu-item *ngIf="isAdmin() ||isCustomer()" routerLink="/usuarios/nuevo">
+        <mat-icon>add_circle </mat-icon>Registrar
+      </button>
+      <button mat-menu-item *ngIf="isAdmin()" routerLink="/usuarios">
+        <mat-icon>list</mat-icon>Listar
+      </button>
+      <button mat-menu-item *ngIf="isAdmin()" routerLink="/usuarios/activos">
+        <mat-icon>check_circle</mat-icon>Activos
+      </button>
+    </mat-menu>
+  
+    <!-- Menú de Tipos de Usuario -->
+    <mat-menu #menuRol="matMenu">
+      <button mat-menu-item *ngIf="isAdmin()" routerLink="/roles/nuevo">
+        <mat-icon>add_circle</mat-icon>Registrar
+      </button>
+      <button mat-menu-item *ngIf="isAdmin()"routerLink="/roles">
+        <mat-icon>list</mat-icon>Listar
+      </button>
+      <button mat-menu-item *ngIf="isAdmin()"routerLink="/roles/rolxuser">
+        <mat-icon>dashboard</mat-icon>Reporte
+      </button>
+    </mat-menu>
+
+    <!-- Menú de Albergues -->
+    <mat-menu #menuAlbergue="matMenu">
+        <button mat-menu-item *ngIf="isAdmin() ||isAlbergue()" routerLink="/albergues/nuevo">
+          <mat-icon>add_circle</mat-icon>Registrar
+        </button>
+        <button mat-menu-item *ngIf="isAdmin()"routerLink="/albergues">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item *ngIf="isAdmin()"routerLink="/albergues/alberguexcantidad">
+          <mat-icon>dashboard</mat-icon>Reporte
+        </button>
+        <button mat-menu-item *ngIf="isAdmin()"routerLink="/albergues/abiertoahora">
+          <mat-icon>call</mat-icon>Disponible
+        </button>
+    </mat-menu>
+
+     <!-- Menú de Citas -->
+    <mat-menu #menuCita="matMenu">
+        <button mat-menu-item *ngIf="isAdmin()"routerLink="/citas/nuevo">
+          <mat-icon>add_circle</mat-icon>Registrar
+        </button>
+        <button mat-menu-item *ngIf="isAdmin() || isCustomer() || isAlbergue()"routerLink="/citas">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item *ngIf="isAdmin() || isCustomer() || isAlbergue()"routerLink="/citas/buscarxpendiente">
+          <mat-icon>watch_later</mat-icon>Pendientes
+        </button>
+    </mat-menu>
+
+     <!-- Menú de Comprobante -->
+     <mat-menu #menuComprobante="matMenu">
+        <button mat-menu-item *ngIf="isAdmin() ||isCustomer()"routerLink="/comprobantes/nuevo">
+          <mat-icon>add_circle</mat-icon>Registrar
+        </button>
+        <button mat-menu-item *ngIf="isAdmin() || isAlbergue()" routerLink="/comprobantes">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+    </mat-menu>
+
+     <!-- Menú de Comentario -->
+     <mat-menu #menuComentario="matMenu">
+        <button mat-menu-item *ngIf="isAdmin() ||isCustomer()"routerLink="/comentarios/nuevo">
+          <mat-icon>add_circle</mat-icon>Registrar
+        </button>
+        <button mat-menu-item *ngIf="isAdmin() || isAlbergue()" routerLink="/comentarios">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+    </mat-menu>
+
+     <!-- Menú de Donacion -->
+     <mat-menu #menuDonacion="matMenu">
+        <button mat-menu-item *ngIf="isAdmin() || isCustomer()"routerLink="/donaciones/nuevo">
+          <mat-icon>add_circle</mat-icon>Registrar
+        </button>
+        <button mat-menu-item *ngIf="isAdmin() || isAlbergue()"routerLink="/donaciones">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item *ngIf="isAdmin() || isAlbergue()"routerLink="/donaciones/donacionxnombre">
+          <mat-icon>dashboard</mat-icon>Reporte
+        </button>
+        <button mat-menu-item *ngIf="isAdmin() || isAlbergue()"routerLink="/donaciones/buscarxmonto">
+          <mat-icon>work</mat-icon>Montos
+        </button>
+    </mat-menu>
+
+     <!-- Menú de Mascota -->
+     <mat-menu #menuMascota="matMenu">
+        <button mat-menu-item *ngIf="isAdmin() || isAlbergue()"routerLink="/mascotas/nuevo">
+          <mat-icon>add_circle</mat-icon>Registrar
+        </button>
+        <button mat-menu-item *ngIf="isAdmin() || isCustomer()" routerLink="/mascotas">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <button mat-menu-item *ngIf="isAdmin() || isAlbergue()"routerLink="/mascotas/mascotaxraza">
+          <mat-icon>dashboard</mat-icon>Raza
+        </button>
+        <button mat-menu-item *ngIf="isAdmin() || isAlbergue()"routerLink="/mascotas/mascotaxadopcion">
+          <mat-icon>insert_chart</mat-icon>Adopcion
+        </button>
+    </mat-menu>
+
+      <!-- Menú de Notificacion -->
+      <mat-menu #menuNotificacion="matMenu">
+        <button mat-menu-item *ngIf="isAdmin() || isCustomer()" routerLink="/notificaciones/nuevo">
+          <mat-icon>add_circle</mat-icon>Registrar
+        </button>
+        <button mat-menu-item *ngIf="isAdmin() || isCustomer()" routerLink="/notificaciones">
+          <mat-icon>list</mat-icon>Listar
+        </button>
+        <!--<button mat-menu-item routerLink="/notificaciones/notificacionxfecha">
+          <mat-icon>calendar_today</mat-icon>Conteo
+        </button>-->
+    </mat-menu> 
+
+    <!-- Menú de Cerrar Sesión -->
+    <mat-menu #menuSalir="matMenu">
+      <button mat-menu-item routerLink="/login" (click)="cerrar()">
+        <mat-icon>logout</mat-icon>
+        <span>Cerrar sesión</span>
+      </button>
+      <button mat-menu-item>
+        Rol:
+        <span>{{ role }}</span>
+      </button>
+    </mat-menu>
+  
+    <!-- Botón Home -->
+    <button mat-button routerLink="/homes">
+      <mat-icon>home</mat-icon>Home
+    </button>
+  </mat-toolbar>
+  
+<router-outlet></router-outlet>

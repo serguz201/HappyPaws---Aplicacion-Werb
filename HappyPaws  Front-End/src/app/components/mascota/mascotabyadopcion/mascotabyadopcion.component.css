@@ -1,0 +1,62 @@
+/* Contenedor principal */
+.title-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb); /* Fondo degradado */
+    padding: 20px; /* Espaciado alrededor */
+    box-sizing: border-box; /* Asegura que el padding no desborde */
+}
+
+/* Título */
+.title h1 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    font-size: 2rem; /* Tamaño del título ajustado */
+    color: #1976d2; /* Color acorde al diseño */
+    margin-bottom: 20px; /* Espaciado debajo del título */
+    text-align: center;
+}
+
+/* Contenedor del gráfico */
+.chart-container {
+    width: 50%; /* Ajusta el tamaño del gráfico */
+    max-width: 600px; /* Tamaño máximo del gráfico */
+    padding: 20px; /* Espaciado interno */
+    background: #ffffff; /* Fondo blanco */
+    border-radius: 15px; /* Bordes redondeados */
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Sombra suave */
+    text-align: center;
+}
+
+/* Adaptación para pantallas medianas */
+@media (max-width: 768px) {
+    .chart-container {
+        width: 80%; /* Ajusta el tamaño en pantallas medianas */
+        padding: 15px; /* Reduce el padding */
+    }
+
+    .title h1 {
+        font-size: 1.8rem; /* Reduce el tamaño del título */
+    }
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 480px) {
+    .title-container {
+        padding: 10px; /* Reduce el padding general */
+    }
+
+    .chart-container {
+        width: 100%; /* El gráfico ocupa todo el ancho disponible */
+        padding: 10px; /* Reduce aún más el padding */
+        border-radius: 10px; /* Bordes menos pronunciados */
+    }
+
+    .title h1 {
+        font-size: 1.5rem; /* Reduce el tamaño del título */
+        margin-bottom: 15px; /* Reduce el espacio inferior */
+    }
+}

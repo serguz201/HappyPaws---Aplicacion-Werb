@@ -1,0 +1,98 @@
+/* Contenedor principal */
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #12c6a8, #238989); /* Fondo degradado */
+    padding: 20px; /* Espacio alrededor para pantallas pequeñas */
+    box-sizing: border-box; /* Garantiza que el padding no afecte el tamaño total */
+}
+
+/* Formulario */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px; /* Máximo ancho en pantallas grandes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box; /* Asegura que el padding no desborde el contenedor */
+}
+
+/* Título del formulario */
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Campos del formulario */
+.mat-form-field {
+    width: 100%; /* Campos ocupan todo el ancho disponible */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Botón */
+button {
+    width: 100%;
+    background: linear-gradient(135deg, #1a6e7d, #289099); /* Gradiente para el botón */
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #172654, #12094d); /* Gradiente más oscuro para hover */
+}
+
+/* Estilo para pantallas medianas */
+@media (max-width: 768px) {
+    form {
+        padding: 20px; /* Reduce el padding en pantallas medianas */
+    }
+
+    h1 {
+        font-size: 1.8rem; /* Ajusta el tamaño del título */
+    }
+
+    button {
+        padding: 8px; /* Botón más compacto */
+    }
+
+    .mat-form-field {
+        margin-bottom: 12px; /* Reduce espacio entre campos */
+    }
+}
+
+/* Estilo para pantallas pequeñas */
+@media (max-width: 480px) {
+    form {
+        padding: 15px; /* Reduce el padding para ahorrar espacio */
+        max-width: 100%; /* Formulario ocupa todo el ancho disponible */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Título más pequeño */
+        margin-bottom: 15px; /* Reduce espacio debajo del título */
+    }
+
+    button {
+        padding: 6px; /* Botón más compacto */
+        font-size: 0.9rem; /* Tamaño de texto más pequeño */
+    }
+
+    .mat-form-field {
+        margin-bottom: 10px; /* Espacio mínimo entre campos */
+    }
+}

@@ -1,0 +1,61 @@
+<div>
+    <form [formGroup]="form" (submit)="aceptar()">
+        <h1>Registro de Notificación</h1>
+  
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+            <mat-label>Código</mat-label>
+            <input matInput formControlName="hcodigo" readonly>
+            <mat-error *ngIf="form.controls['hcodigo'].hasError('required') && form.controls['hcodigo'].touched">
+                El código es requerido.
+            </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field>
+            <mat-label>Mensaje</mat-label>
+            <input matInput placeholder="Mensaje" formControlName="hmensaje">
+            <mat-error *ngIf="form.controls['hmensaje'].touched">
+              <ng-container *ngIf="form.controls['hmensaje'].hasError('required')">
+                El mensaje es requerido.
+              </ng-container>
+              <ng-container *ngIf="form.controls['hmensaje'].hasError('minlength') && !form.controls['hmensaje'].hasError('required')">
+                Debe tener al menos 4 caracteres.
+              </ng-container>
+              <ng-container *ngIf="form.controls['hmensaje'].hasError('maxlength') && !form.controls['hmensaje'].hasError('required') && !form.controls['hmensaje'].hasError('minlength')">
+                No debe tener más de 20 caracteres.
+              </ng-container>
+            </mat-error>
+          </mat-form-field>
+  
+        <mat-form-field>
+            <mat-label>Emisor</mat-label>
+            <mat-select formControlName="hemisor">
+                <mat-option *ngFor="let user of listaUsuarios" [value]="user.id">{{user.username}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls['hemisor'].hasError('required') && form.controls['hemisor'].touched">
+                El usuario es requerido.
+            </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field>
+            <mat-label>Tipo</mat-label>
+            <mat-select formControlName="htipo">
+                <mat-option *ngFor="let tipo of listaTipos" [value]="tipo.value">{{tipo.viewValue}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls['htipo'].hasError('required') && form.controls['htipo'].touched">
+                El tipo es requerido.
+            </mat-error>
+        </mat-form-field>
+  
+        <mat-form-field>
+            <mat-label>User</mat-label>
+            <mat-select formControlName="huser">
+                <mat-option *ngFor="let user of listaUsuarios" [value]="user.id">{{user.username}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="form.controls['huser'].hasError('required') && form.controls['huser'].touched">
+                El usuario es requerido.
+            </mat-error>
+        </mat-form-field>
+  
+        <button mat-flat-button type="submit">Registrar</button>
+    </form>
+  </div>

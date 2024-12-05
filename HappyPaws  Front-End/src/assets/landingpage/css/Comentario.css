@@ -1,0 +1,435 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    background: #CFE9E3;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+    max-width: 100%; 
+    box-shadow: none; /* Restringe sombras globales */
+}
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #E0F2F1; /* Asegúrate de que sea el color correcto */
+}
+
+/* Global */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%; /* Importante para ocupar toda la ventana */
+    display: flex;
+    flex-direction: column; /* Hace que los hijos se apilen verticalmente */
+    background-color: #E0F2F1;
+    font-family: 'Inter', sans-serif;
+}
+
+
+header nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: #8AEFD7;
+    padding: 10px 20px;
+}
+
+header .logo {
+    display: flex; /* Usar flexbox para centrar el contenido */
+    align-items: center; /* Centrar el logo verticalmente */
+    justify-content: center; /* Centrar el logo horizontalmente */
+    margin: 0; /* Elimina márgenes adicionales */
+    padding: 0; /* Elimina padding extra */
+    height: 60px; /* Asegura que el contenedor tenga la altura del logo */
+}
+
+header .logo img {
+    height: 100%; /* El logo ocupará el 100% de la altura del contenedor */
+    max-height: 70px; /* Asegura que no se desborde si el contenedor es más grande */
+    width: auto; /* Mantiene la proporción del logo */
+}
+header .menu {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0 0 0 40px;
+    padding: 0;
+    background-color: #8AEFD7;
+}
+
+header .menu li {
+    display: inline-block;
+    background-color: #00796B;
+}
+
+header .menu li a {
+    text-decoration: none;
+    background-color: #8AEFD7;
+    font-size: 16px;
+    color:#333333
+}
+
+header .menu li a:hover {
+    color: #00796B;
+}
+
+.login-register-btn {
+    padding: 8px 20px;
+    font-size: 14px;
+    color: white; /* Texto blanco */
+    background-color: #004D40; /* Fondo verde oscuro */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.login-register-btn:hover {
+    background-color: #00796B; /* Fondo ligeramente más claro al pasar el cursor */
+    color: white; /* Asegura que el texto permanezca blanco */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Efecto visual */
+}
+.user-options {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: #8AEFD7;
+}
+
+.user-icon {
+    font-size: 24px;
+    color: #004D40;
+    background-color: #8AEFD7;  
+}
+
+.user-icon:hover {
+    color: #00796B;
+}
+
+
+
+
+
+/* Main Content */
+.container {
+    flex: 1; /* Hace que el contenedor principal ocupe el espacio disponible */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 100px 40px;
+    gap: 20px;
+}
+
+/* Contact Info */
+.contact-info {
+    flex: 0.45;
+    background-color: transparent; /* Asegúrate de que sea transparente */;
+}
+
+.contact-info h2 {
+    font-size: 28px;
+    font-weight: bold;
+   
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+.info-box {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #ccc; /* Asegúrate de que el borde sea claro */
+    background-color: white; /* Asegura el fondo blanco */
+    margin-bottom: 15px;
+}
+
+.info-box i, .info-box span {
+    box-shadow: none;
+    background-color: transparent; /* Asegura que el fondo sea claro */
+}
+
+/* Form Section */
+
+/* Estilo para centrar el botón */
+.form-section form div {
+    display: flex; /* Utiliza flexbox para el contenedor */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Opcional, centra verticalmente si es necesario */
+    margin-top: 20px; /* Margen superior para separar del contenido */
+}
+
+.form-section form div button {
+    margin: 0; /* Remueve cualquier margen adicional del botón */
+    padding: 10px 20px; /* Ajusta el tamaño del botón */
+}
+
+.form-section {
+    flex: 0.5;
+    background-color: #ffffff;
+    padding: 30px; /* Incrementa el padding interno del formulario */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 2px solid #00796B; /* Marco verde */
+}
+
+.form-section label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+.form-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Cantidad de Estrellas: texto y estrellas alineados */
+.form-section label[for="rating"] {
+    display: flex;
+    align-items: center; /* Alineación vertical */
+    justify-content: flex-start; /* Alineación horizontal hacia la izquierda */
+    gap: 15px; /* Espaciado entre el texto y las estrellas */
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Star Rating */
+.star-rating {
+    display: flex;
+    gap: 10px; /* Espaciado entre las estrellas */
+    align-items: center; /* Asegura la alineación vertical de las estrellas */
+    margin: 0; /* Evita margen extra */
+    margin-left: 10px; /* Opcional: Ajusta la distancia entre el texto y las estrellas */
+    margin-bottom: 20px; /* Espaciado adicional entre las estrellas y el textarea */
+}
+
+.star-rating input {
+    display: none; /* Oculta los inputs de radio */
+    
+}
+
+.star-rating label {
+    font-size: 24px;
+    color: #ccc; /* Estrellas grises por defecto */
+    cursor: pointer;
+}
+
+.star-rating label:hover,
+.star-rating label:hover ~ label,
+.star-rating input:checked ~ label {
+    color: gold; /* Estrellas doradas al seleccionar o hacer hover */
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00796B;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.button:hover {
+    background-color: #005B50;
+    transform: translateY(-2px);
+}
+
+.form-section label {
+    font-size: 16px;
+    font-weight: bold;
+    
+}
+
+.form-section input,
+.form-section textarea {
+    width: 100%;
+    padding: 10px 15px; /* Aumenta el espacio interno */
+    font-size: 14px;
+    color: #333;
+    background-color: #f9f9f9;
+    border: 2px solid #00796B; /* Borde verde */
+    border-radius: 5px;
+    margin-bottom: 20px; /* Espaciado inferior entre inputs */
+    box-sizing: border-box; /* Asegura que padding no afecte el ancho total */
+    outline: none; /* Quita el borde azul por defecto al hacer foco */
+    transition: border-color 0.3s ease; /* Efecto de transición */
+}
+
+.form-section input:focus,
+.form-section textarea:focus {
+    border-color: #005B50; /* Cambia a un verde más oscuro al hacer foco */
+    box-shadow: 0 0 5px rgba(0, 121, 107, 0.5); /* Sombra ligera al hacer foco */
+}
+
+textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+
+
+/* Button */
+
+.button-container {
+    display: flex; /* Activa flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    margin-top: 20px; /* Espacio superior para separarlo del texto */
+}
+
+.button-container button {
+    padding: 10px 20px;
+    background-color: #00796B; /* Color del botón */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.button-container button:hover {
+    background-color: #005B50; /* Cambia el color al pasar el cursor */
+}
+
+button {
+    padding: 10px 20px;
+    background-color: #00796B;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+    background-color: #005B50;
+    transform: translateY(-2px);
+}
+
+/* Footer */
+
+footer * {
+    text-shadow: none !important; /* Elimina cualquier sombra de texto */
+    color: #004D40 !important; /* Fuerza un color sólido si es necesario */
+    background: transparent !important; /* Elimina cualquier fondo extra */
+}
+footer * {
+    box-shadow: none !important; /* Elimina cualquier sombra en todos los elementos del footer */
+    filter: none !important; /* Elimina filtros aplicados, como brillo o desenfoque */
+}
+footer {
+    filter: none !important; /* Elimina cualquier filtro en el footer */
+}
+.footer-logo, .social-media li a {
+    background: transparent !important; /* Asegúrate de que no haya fondos extraños */
+}
+footer * {
+    all: unset; /* Resetea todos los estilos aplicados */
+}
+footer {
+    background-color: #8AEFD7;
+    color: black;
+    padding: 20px 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: none; /* Elimina sombras */
+    position: relative;
+    bottom: 0;
+    flex-shrink: 0; /* Evita que el footer se reduzca cuando falta contenido */
+}
+
+.footer-left p {
+    text-shadow: none; /* Elimina cualquier sombra en el texto */
+    color: #004D40; /* Asegúrate de que el color sea sólido y no blanco */
+    font-size: 14px; /* Ajusta el tamaño si es necesario */
+    margin: 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Espaciado entre los elementos */
+    align-items: center;
+    width: 90%; /* Limita el ancho máximo */
+    max-width: 1200px;
+    margin: 0 auto; /* Centra el contenido */
+    flex-wrap: wrap; /* Ajuste para dispositivos pequeños */
+}
+
+.footer-left, .footer-center, .footer-right {
+    flex: 1;
+    text-align: center;
+    margin: 10px 0;
+}
+
+.footer-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-logo {
+    box-shadow: none; /* Elimina cualquier sombra del contenedor del logo */
+    background: none; /* Asegúrate de que no tenga un fondo extra */
+    filter: none; /* Elimina cualquier filtro aplicado, como brillo */
+    width: 60px; /* Ajusta el tamaño según lo necesario */
+    margin-bottom: 10px;
+}
+
+.social-media {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    padding: 0;
+}
+
+.social-media li a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background-color: #004D40; /* Fondo verde oscuro */
+    color: white;
+    border-radius: 50%; /* Íconos redondeados */
+    font-size: 18px;
+    text-decoration: none;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: none; /* Elimina sombras adicionales */
+}
+
+.social-media li a:hover {
+    background-color: #00796B; /* Fondo más claro */
+    color: #E0F2F1; /* Cambia color del ícono */
+    transform: scale(1.1); /* Agranda el ícono */
+}
+
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column; /* Apilar bloques en dispositivos pequeños */
+        text-align: center;
+    }
+
+    .footer-left, .footer-center, .footer-right {
+        margin: 10px 0;
+    }
+}

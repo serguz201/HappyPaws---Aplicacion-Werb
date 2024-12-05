@@ -1,0 +1,40 @@
+<div>
+  <h1>Listar Citas Pendientes</h1>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Albergue Column -->
+      <ng-container matColumnDef="c1">
+          <th mat-header-cell *matHeaderCellDef> Albergue </th>
+          <td mat-cell *matCellDef="let cita"> {{cita.albergue.nombreAlbergue}} </td>
+      </ng-container>
+
+      <!-- Usuario Column -->
+      <ng-container matColumnDef="c2">
+          <th mat-header-cell *matHeaderCellDef> Usuario </th>
+          <td mat-cell *matCellDef="let cita"> {{cita.users.username}} </td>
+      </ng-container>
+
+      <!-- Fecha Cita Column -->
+      <ng-container matColumnDef="c3">
+          <th mat-header-cell *matHeaderCellDef> Fecha Cita </th>
+          <td mat-cell *matCellDef="let cita"> {{cita.fechaCita}} </td>
+      </ng-container>
+
+      <!-- Hora Cita Column -->
+      <ng-container matColumnDef="c4">
+          <th mat-header-cell *matHeaderCellDef> Hora Cita </th>
+          <td mat-cell *matCellDef="let cita"> {{cita.horaCita}} </td>
+      </ng-container>
+
+      <!-- Estado Cita Column -->
+      <ng-container matColumnDef="c5">
+          <th mat-header-cell *matHeaderCellDef> Estado Cita </th>
+          <td mat-cell *matCellDef="let cita"> {{cita.estadoCita}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[4, 8, 10]" aria-label="Select page"></mat-paginator>
+</div>

@@ -1,0 +1,106 @@
+/* General Box Sizing */
+div {
+    box-sizing: border-box;
+}
+
+/* Estilos del Encabezado */
+h1 {
+    padding: 20px;
+    background-color: #76a48f;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    font-size: 1.8em;
+}
+
+/* Tabla */
+table {
+    margin: 20px auto;
+    border-radius: 10px;
+    border: solid 3px #76a48f;
+    width: 90%;
+    background-color: white;
+    border-collapse: collapse;
+    overflow-x: auto;
+    font-size: 1em;
+}
+
+/* Encabezados de la Tabla */
+th {
+    font-weight: bold;
+    color: #444;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    background-color: #f5f5f5;
+}
+
+/* Filas de la Tabla */
+td {
+    padding: 8px 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Paginador */
+mat-paginator {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+/* Diseño Responsivo */
+@media (max-width: 768px) {
+    /* Encabezado más compacto */
+    h1 {
+        font-size: 1.5em;
+        padding: 15px;
+    }
+
+    /* Tabla más compacta */
+    table {
+        width: 100%;
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 6px 8px;
+    }
+
+    /* Paginador en columna */
+    mat-paginator {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    /* Encabezado aún más compacto */
+    h1 {
+        font-size: 1.2em;
+        padding: 10px;
+    }
+
+    /* Tabla en formato scroll horizontal */
+    table {
+        display: block;
+        overflow-x: auto;
+        font-size: 0.8em;
+    }
+
+    th, td {
+        padding: 5px;
+    }
+
+    /* Paginador compacto */
+    mat-paginator {
+        flex-direction: column;
+        gap: 5px;
+    }
+}

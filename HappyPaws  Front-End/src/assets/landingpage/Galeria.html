@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adopción de Caninos</title>
+    <link rel="stylesheet" href="css/Galeria.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="public/Assets/Logo.jpeg" alt="Happy Paws">
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Galeria.html">Galería</a></li>
+                <li><a href="Albergue.html">Albergues</a></li>
+                <li><a href="Comentario.html">Comentarios</a></li>
+            </ul>
+            <div class="user-options">
+                <i class="fas fa-user-alt user-icon"></i>
+                <a href="/login" class="login-register-btn">Iniciar sesión</a>
+            </div>
+        </nav>
+    </header>
+
+        <section class="portada">
+            <div class="portada-container">
+
+                <div class="header">
+                    <p>El filtro de búsqueda ha seleccionado estas mascotas que podrían ser de tu agrado</p>
+
+                </div>
+
+                <div class="box-portada">
+
+                    <div class="info-box">
+                        <span class="category-tag">Caninos</span>
+                        <span class="date">Septiembre 7, 2024</span>
+                        <h1>Categoría: Caninos en adopción</h1>
+                        <p>Encuentra a tu mascota ideal en esta sección</p>
+                    </div>
+                    <div class="image-container">
+                        <img src="public/Assets/fondo copy.jpg" alt="Caninos en adopción">
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </section>
+
+
+
+    <main>
+
+        <section class="filter-section">
+            <h2>Filtrar por</h2>
+            <form id="filterForm">
+                <div class="filter-group">
+                    <h3>Especie</h3>
+                    <label><input type="radio" name="species" value="caninos"> Caninos</label><br>
+                    <label><input type="radio" name="species" value="felinos"> Felinos</label><br>
+                    <label><input type="radio" name="species" value="aves"> Aves</label><br>
+                </div>
+
+
+                <div class="filter-group">
+                    <h3>Peso</h3>
+                    <label><input type="radio" name="weight" value="menos13"> 0 - 13 kg</label><br>
+                    <label><input type="radio" name="weight" value="entre14y27"> 14 - 27 kg</label><br>
+                    <label><input type="radio" name="weight" value="entre28y41"> 28 - 41 kg</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Tamaño</h3>
+                    <label><input type="radio" name="size" value="pequeño"> Pequeño</label><br>
+                    <label><input type="radio" name="size" value="mediano"> Mediano</label><br>
+                    <label><input type="radio" name="size" value="grande"> Grande</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Sexo</h3>
+                    <label><input type="radio" name="sex" value="macho"> Macho</label><br>
+                    <label><input type="radio" name="sex" value="hembra"> Hembra</label>
+                </div>
+
+                <div class="filter-group">
+                    <h3>Edad</h3>
+                    <label><input type="radio" name="age" value="menos1">6 meses - 1 año</label><br>
+                    <label><input type="radio" name="age" value="entre1y3">1 - 3 años</label><br>
+                    <label><input type="radio" name="age" value="entre4y7"> 4 - 7 años</label><br>
+                    <label><input type="radio" name="age" value="mas7"> 7 + años </label>
+
+                </div>
+
+
+
+            </form>
+            <div class="filters">
+
+                <button id="clear-filters">Borrar Filtros</button>
+            </div>
+
+        </section>
+
+        <section id="results" class="results">
+
+            <div class="dog-card" data-species="caninos" data-weight="entre14y27" data-size="grande" data-sex="macho"
+                data-age="entre1y3">
+                <img src="public/Assets/1 canino.jpg" alt="Max">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Caninos</h3>
+                        <p class="codigo">Código: L90N</p>
+                    </div>
+                    <p class="concepto">Max, macho de 3 años</p>
+
+
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Max, macho de 3 años</h4>
+                                        <img class="img-interior" src="public/Assets/1 canino.jpg" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Max</span>
+                                            <span class="label">Especie:</span> <span class="value">Canino</span>
+                                            <span class="label">Peso:</span> <span class="value">23 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Grande</span>
+                                            <span class="label">Sexo:</span> <span class="value">Macho</span>
+                                            <span class="label">Edad:</span> <span class="value">3 años</span>
+                                        </p>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4>
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div>
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+                </div>
+            </div>
+
+            <div class="dog-card" data-species="caninos" data-weight="menos13" data-size="pequeño" data-sex="hembra"
+                data-age="entre4y7">
+                <img src="public/Assets/darly.png" alt="Darly">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Caninos</h3>
+                        <p class="codigo">Código: I21X</p>
+                    </div>
+                    <p class="concepto">Darly, hembra esterilizada de 5 años</p>
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Darly, hembra de 5 años</h4>
+                                        <img class="img-interior" src="public/Assets/darly.png" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Darly</span>
+                                            <span class="label">Especie:</span> <span class="value">Canino</span>
+                                            <span class="label">Peso:</span> <span class="value">12 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Pequeño</span>
+                                            <span class="label">Sexo:</span> <span class="value">Hembra</span>
+                                            <span class="label">Edad:</span> <span class="value">5 años</span>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4> 
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div> 
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+
+            <div class="dog-card" data-species="caninos" data-weight="entre28y41" data-size="grande" data-sex="macho"
+                data-age="entre1y3">
+                <img src="public/Assets/toby.png" alt="Toby">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Caninos</h3>
+                        <p class="codigo">Código: S67C</p>
+                    </div>
+                    <p class="concepto">Toby, macho de 2 años</p>
+                    <a href="##" class="more-info">Más información → </a>
+
+                </div>
+            </div>
+
+
+            <div class="dog-card" data-species="caninos" data-weight="entre14y27" data-size="mediano" data-sex="macho"
+                data-age="entre1y3">
+                <img src="public/Assets/cerbero.png" alt="Cerbero">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Caninos</h3>
+                        <p class="codigo">Código: X76M</p>
+                    </div>
+                    <p class="concepto">Cerbero, macho de 2 años</p>
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Cerbero, macho de 2 años</h4>
+                                        <img class="img-interior" src="public/Assets/cerbero.png" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Cerbero</span>
+                                            <span class="label">Especie:</span> <span class="value">Canino</span>
+                                            <span class="label">Peso:</span> <span class="value">20 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Mediano</span>
+                                            <span class="label">Sexo:</span> <span class="value">Macho</span>
+                                            <span class="label">Edad:</span> <span class="value">2 años</span>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4> 
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div> 
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="dog-card" data-species="caninos" data-weight="entre28y41" data-size="grande" data-sex="macho"
+                data-age="entre1y3">
+                <img src="public/Assets/rocky.png" alt="Rocky">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Caninos</h3>
+                        <p class="codigo">Código: A34H</p>
+                    </div>
+                    <p class="concepto">Rocky, macho de 1 año</p>
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Rocky, macho de 1 año</h4>
+                                        <img class="img-interior" src="public/Assets/rocky.png" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Rocky</span>
+                                            <span class="label">Especie:</span> <span class="value">Canino</span>
+                                            <span class="label">Peso:</span> <span class="value">35 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Grande</span>
+                                            <span class="label">Sexo:</span> <span class="value">Macho</span>
+                                            <span class="label">Edad:</span> <span class="value">1 año</span>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4> 
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div> 
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="dog-card" data-species="caninos" data-weight="entre14y27" data-size="mediano" data-sex="hembra"
+                data-age="entre1y3">
+                <img src="public/Assets/bella.png" alt="Bella">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Caninos</h3>
+                        <p class="codigo">Código: Q82J</p>
+                    </div>
+                    <p class="concepto">Bella, hembra esterilizada de 2 años</p>
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Bella, hembra de 2 años</h4>
+                                        <img class="img-interior" src="public/Assets/bella.png" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Bella</span>
+                                            <span class="label">Especie:</span> <span class="value">Canino</span>
+                                            <span class="label">Peso:</span> <span class="value">22 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Mediano</span>
+                                            <span class="label">Sexo:</span> <span class="value">Hembra</span>
+                                            <span class="label">Edad:</span> <span class="value">2 años</span>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4> 
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div> 
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="dog-card" data-species="felinos" data-weight="menos13" data-size="mediano" data-sex="hembra"
+                data-age="entre1y3">
+                <img src="public/Assets/betty.png" alt="Betty">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Felinos</h3>
+                        <p class="codigo">Código: D32V</p>
+                    </div>
+                    <p class="concepto">Betty, hembra de 2 años</p>
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Betty, hembra de 2 años</h4>
+                                        <img class="img-interior" src="public/Assets/betty.png" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Betty</span>
+                                            <span class="label">Especie:</span> <span class="value">Felino</span>
+                                            <span class="label">Peso:</span> <span class="value">10 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Mediano</span>
+                                            <span class="label">Sexo:</span> <span class="value">Hembra</span>
+                                            <span class="label">Edad:</span> <span class="value">2 años</span>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4> 
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div> 
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="dog-card" data-species="felinos" data-weight="menos13" data-size="mediano" data-sex="hembra"
+                data-age="menos1">
+                <img src="public/Assets/polly.png" alt="Poly">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Felinos</h3>
+                        <p class="codigo">Código: B51P</p>
+                    </div>
+                    <p class="concepto">Poly, hembra de 6 meses</p>
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Poly, hembra de 6 meses</h4>
+                                        <img class="img-interior" src="public/Assets/polly.png" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Poly</span>
+                                            <span class="label">Especie:</span> <span class="value">Felino</span>
+                                            <span class="label">Peso:</span> <span class="value">5 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Mediano</span>
+                                            <span class="label">Sexo:</span> <span class="value">Hembra</span>
+                                            <span class="label">Edad:</span> <span class="value">6 meses</span>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4> 
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div> 
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="dog-card" data-species="felinos" data-weight="menos13" data-size="mediano" data-sex="macho"
+                data-age="entre1y3">
+                <img src="public/Assets/copito.png" alt="Copito">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Felinos</h3>
+                        <p class="codigo">Código: Q98X</p>
+                    </div>
+                    <p class="concepto">Copito, macho de 1 año</p>
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Copito, macho de 1 año</h4>
+                                        <img class="img-interior" src="public/Assets/copito.png" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Copito</span>
+                                            <span class="label">Especie:</span> <span class="value">Felino</span>
+                                            <span class="label">Peso:</span> <span class="value">5 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Mediano</span>
+                                            <span class="label">Sexo:</span> <span class="value">Macho</span>
+                                            <span class="label">Edad:</span> <span class="value">1 año</span>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4> 
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div> 
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+            <div class="dog-card" data-species="felinos" data-weight="menos13" data-size="mediano" data-sex="macho"
+                data-age="entre1y3">
+                <img src="public/Assets/jabier.png" alt="Javier">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Felinos</h3>
+                        <p class="codigo">Código: T79S</p>
+                    </div>
+                    <p class="concepto">Javier, macho de 2 años</p>
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Javier, macho de 2 años</h4>
+                                        <img class="img-interior" src="public/Assets/jabier.png" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Javier</span>
+                                            <span class="label">Especie:</span> <span class="value">Felino</span>
+                                            <span class="label">Peso:</span> <span class="value">4 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Mediano</span>
+                                            <span class="label">Sexo:</span> <span class="value">Macho</span>
+                                            <span class="label">Edad:</span> <span class="value">2 años</span>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4> 
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div> 
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="dog-card" data-species="aves" data-weight="menos13" data-size="mediano" data-sex="macho"
+                data-age="entre1y3">
+                <img src="public/Assets/Max.avif" alt="Javier">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Aves</h3>
+                        <p class="codigo">Código: P87Z</p>
+                    </div>
+                    <p class="concepto">Javier, macho de 3 años</p>
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Javier, macho de 3 años</h4>
+                                        <img class="img-interior" src="public/Assets/Max.avif" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Javier</span>
+                                            <span class="label">Especie:</span> <span class="value">Ave</span>
+                                            <span class="label">Peso:</span> <span class="value">3 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Mediano</span>
+                                            <span class="label">Sexo:</span> <span class="value">Macho</span>
+                                            <span class="label">Edad:</span> <span class="value">3 años</span>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4> 
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div> 
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Close</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="dog-card" data-species="aves" data-weight="menos13" data-size="pequeño" data-sex="hembra"
+                data-age="entre1y3">
+                <img src="public/Assets/Lara.avif" alt="Lara">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Aves</h3>
+                        <p class="codigo">Código: X24M</p>
+                    </div>
+                    <p class="concepto">Lara, hembra de 2 años</p>
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Lara, hembra de 2 años</h4>
+                                        <img class="img-interior" src="public/Assets/Lara.avif" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Lara</span>
+                                            <span class="label">Especie:</span> <span class="value">Ave</span>
+                                            <span class="label">Peso:</span> <span class="value">8 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Pequeño</span>
+                                            <span class="label">Sexo:</span> <span class="value">Hembra</span>
+                                            <span class="label">Edad:</span> <span class="value">2 años</span>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4> 
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div> 
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="dog-card" data-species="aves" data-weight="menos13" data-size="pequeño" data-sex="hembra"
+                data-age="entre4y7">
+                <img src="public/Assets/Fer.avif" alt="Fer">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Aves</h3>
+                        <p class="codigo">Código: T56B</p>
+                    </div>
+                    <p class="concepto">Fer, hembra de 4 años</p>
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Fer, hembra de 4 años</h4>
+                                        <img class="img-interior" src="public/Assets/Fer.avif" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Fer</span>
+                                            <span class="label">Especie:</span> <span class="value">Ave</span>
+                                            <span class="label">Peso:</span> <span class="value">8 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Pequeño</span>
+                                            <span class="label">Sexo:</span> <span class="value">Hembra</span>
+                                            <span class="label">Edad:</span> <span class="value">4 años</span>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4> 
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div> 
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="dog-card" data-species="aves" data-weight="menos13" data-size="pequeño" data-sex="hembra"
+                data-age="entre1y3">
+                <img src="public/Assets/sky.jfif" alt="Sky">
+                <div class="card-content">
+                    <div class="tipo-code-container">
+                        <h3 class="tipo">Aves</h3>
+                        <p class="codigo">Código: W12R</p>
+                    </div>
+                    <p class="concepto">Sky, hembra de 1 año</p>
+
+                    <div class="service-items">
+                        <div class="item">
+                            <div class="item-inner">
+                                <button class="more-info">
+                                    Más información →
+                                    <div class="read-more-cont" style="display: none;">
+                                        <h4>Sky, hembra de 1 año</h4>
+                                        <img class="img-interior" src="public/Assets/sky.jfif" alt="">
+                                        <p class="p-interior">
+                                            <span class="label">Nombre:</span> <span class="value">Sky</span>
+                                            <span class="label">Especie:</span> <span class="value">Ave</span>
+                                            <span class="label">Peso:</span> <span class="value">5 kg</span>
+                                            <span class="label">Tamaño:</span> <span class="value">Pequeño</span>
+                                            <span class="label">Sexo:</span> <span class="value">Hembra</span>
+                                            <span class="label">Edad:</span> <span class="value">1 año</span>
+                                        </p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                    <div class="popup-box">
+                        <div class="popup-content">
+                            <div class="popup-header">
+                                <h4></h4> 
+                                <span class="popup-close-icon">&times;</span>
+                            </div>
+                            <div class="popup-body"></div> 
+                            <div class="popup-footer">
+                                <button class="btn popup-close-btn">Cerrar</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+
+        </section>
+
+
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>Copyright © 2024 Grupo 3 - HappyPaws | All Rights Reserved</p>
+            </div>
+            <div class="footer-center">
+                <img src="public/Assets/Logo.jpeg" alt="HappyPaws" class="footer-logo">
+            </div>
+            <div class="footer-right">
+                <ul class="social-media">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/Galeria.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HappyPaws - Comentarios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/Comentario.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="public/Assets/Logo.jpeg" alt="Happy Paws">
+            </div>
+            <ul class="menu">
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="nosotros.html">Nosotros</a></li>
+                <li><a href="Galeria.html">Galería</a></li>
+                <li><a href="Albergue.html">Albergues</a></li>
+                <li><a href="Comentario.html">Comentarios</a></li>
+            </ul>
+            <div class="user-options">
+                <i class="fas fa-user-alt user-icon"></i>
+                <a href="/login" class="login-register-btn">Iniciar sesión</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <div class="contact-info">
+            <h2>Comentarios</h2>
+            <p>Envíanos un comentario de tu experiencia con nuestra plataforma</p>
+            <div class="info-box">
+                <i class="fas fa-envelope"></i>
+                <span>Email:<br> HappyPaws@gmail.com</span>
+            </div>
+            <div class="info-box">
+                <i class="fas fa-phone"></i>
+                <span>Teléfono:<br> (01) 687 - 5892</span>
+            </div>
+        </div>
+        <div class="form-section">
+            <form action="#" method="POST">
+                <label for="name">Nombre</label>
+                <input type="text" id="name" name="name" placeholder="Nombre del usuario" required>
+
+                <label for="shelter">Albergue</label>
+                <input type="text" id="shelter" name="shelter" placeholder="Nombre del albergue" required>
+                
+                <label for="rating">Cantidad de Estrellas
+                <div class="star-rating">
+                    <input type="radio" id="star5" name="rating" value="5">
+                    <label for="star5" class="fas fa-star"></label>
+                    
+                    <input type="radio" id="star4" name="rating" value="4">
+                    <label for="star4" class="fas fa-star"></label>
+                    
+                    <input type="radio" id="star3" name="rating" value="3">
+                    <label for="star3" class="fas fa-star"></label>
+                    
+                    <input type="radio" id="star2" name="rating" value="2">
+                    <label for="star2" class="fas fa-star"></label>
+                
+                    <input type="radio" id="star1" name="rating" value="1">
+                    <label for="star1" class="fas fa-star"></label>
+                </div>
+            </label>
+
+                <div>
+                    <textarea id="comment" name="comment" placeholder="Escribe tu comentario aquí..." required></textarea>
+                </div>
+                <!-- Contenedor exclusivo para el botón -->
+                <div class="button-container">
+                    <a href="index.html" class="button">Enviar Comentario</a>
+                </div>
+                
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <p>Copyright © 2024 Grupo 3 - HappyPaws | All Rights Reserved</p>
+            </div>
+            <div class="footer-center">
+                <img src="public/Assets/Logo.jpeg" alt="HappyPaws" class="footer-logo">
+            </div>
+            <div class="footer-right">
+                <ul class="social-media">
+                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

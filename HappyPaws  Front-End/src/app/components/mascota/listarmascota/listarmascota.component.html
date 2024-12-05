@@ -1,0 +1,82 @@
+<div>
+  <h1>Listar Mascotas</h1>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- ID Mascota Column -->
+      <ng-container matColumnDef="c1">
+          <th mat-header-cell *matHeaderCellDef> ID Mascota </th>
+          <td mat-cell *matCellDef="let mascota"> {{mascota.idMascota}} </td>
+      </ng-container>
+
+      <!-- Nombre Mascota Column -->
+      <ng-container matColumnDef="c2">
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
+          <td mat-cell *matCellDef="let mascota"> {{mascota.nombreMascota}} </td>
+      </ng-container>
+
+      <!-- Nacimiento Mascota Column -->
+      <ng-container matColumnDef="c3">
+          <th mat-header-cell *matHeaderCellDef> Fecha de Nacimiento </th>
+          <td mat-cell *matCellDef="let mascota"> {{mascota.nacimientoMascota}} </td>
+      </ng-container>
+
+      <!-- Raza Mascota Column -->
+      <ng-container matColumnDef="c4">
+          <th mat-header-cell *matHeaderCellDef> Raza </th>
+          <td mat-cell *matCellDef="let mascota"> {{mascota.razaMascota}} </td>
+      </ng-container>
+
+      <!-- Sexo Mascota Column -->
+      <ng-container matColumnDef="c5">
+          <th mat-header-cell *matHeaderCellDef> Sexo </th>
+          <td mat-cell *matCellDef="let mascota"> {{mascota.sexoMascota}} </td>
+      </ng-container>
+
+      <!-- Estado Mascota Column -->
+      <ng-container matColumnDef="c6">
+          <th mat-header-cell *matHeaderCellDef> Estado </th>
+          <td mat-cell *matCellDef="let mascota"> {{mascota.estadoMascota}} </td>
+      </ng-container>
+
+      <!-- Fecha Ingreso Mascota Column -->
+      <ng-container matColumnDef="c7">
+          <th mat-header-cell *matHeaderCellDef> Fecha de Ingreso </th>
+          <td mat-cell *matCellDef="let mascota"> {{mascota.fechaIngresoMascota}} </td>
+      </ng-container>
+
+      <!-- Estado de Adopción Column -->
+      <ng-container matColumnDef="c8">
+          <th mat-header-cell *matHeaderCellDef> Estado de Adopción </th>
+          <td mat-cell *matCellDef="let mascota"> {{mascota.estadoAdopcion ? 'Adoptado' : 'En Adopción'}} </td>
+      </ng-container>
+
+      <!-- Albergue Column -->
+      <ng-container matColumnDef="c9">
+          <th mat-header-cell *matHeaderCellDef> Albergue </th>
+          <td mat-cell *matCellDef="let mascota"> {{mascota.albergue.nombreAlbergue}} </td>
+      </ng-container>
+
+      <!-- Acciones Column -->
+      <ng-container matColumnDef="accion01">
+          <th mat-header-cell *matHeaderCellDef> Acciones </th>
+          <td mat-cell *matCellDef="let mascota">
+            <mat-icon 
+            (click)="eliminar(mascota.idMascota)" 
+            style="cursor: pointer;"
+          >
+            delete
+          </mat-icon>
+              <mat-icon style="cursor: pointer; margin-left: 8px;" [routerLink]="['ediciones', mascota.idMascota]">
+                  edit
+              </mat-icon>
+          </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+  <mat-paginator
+      [pageSizeOptions]="[4, 8, 10]"
+      aria-label="Select page"
+    ></mat-paginator>
+</div>

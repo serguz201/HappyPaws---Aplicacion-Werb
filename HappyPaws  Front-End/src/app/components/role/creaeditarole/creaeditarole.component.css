@@ -1,0 +1,109 @@
+/* Contenedor principal */
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, #12c6a8, #238989); /* Fondo degradado */
+    padding: 20px; /* Ajuste para dispositivos pequeños */
+    box-sizing: border-box; /* Asegura que el padding no desborde */
+}
+
+/* Formulario */
+form {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px; /* Máximo ancho para pantallas grandes */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+/* Título */
+h1 {
+    text-align: center;
+    font-family: Arial, sans-serif;
+    font-size: 2rem;
+    color: black;
+    margin-bottom: 20px;
+}
+
+/* Campos del formulario */
+.mat-form-field {
+    width: 100%; /* Campos ocupan todo el ancho disponible */
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Botón */
+button {
+    width: 100%;
+    background: linear-gradient(135deg, #1a6e7d, #289099); /* Gradiente atractivo */
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #172654, #12094d); /* Gradiente más oscuro en hover */
+}
+
+/* Media Queries para diseño responsivo */
+
+/* Pantallas medianas */
+@media (max-width: 768px) {
+    div {
+        padding: 15px; /* Reduce el padding general */
+    }
+
+    form {
+        padding: 20px; /* Reduce el padding del formulario */
+    }
+
+    h1 {
+        font-size: 1.5rem; /* Ajusta el tamaño del título */
+        margin-bottom: 15px;
+    }
+
+    button {
+        padding: 8px; /* Botón más compacto */
+    }
+
+    .mat-form-field {
+        margin-bottom: 12px; /* Reduce el espacio entre campos */
+    }
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 480px) {
+    div {
+        padding: 10px; /* Reduce el padding general */
+    }
+
+    form {
+        padding: 15px; /* Ajusta el padding */
+        max-width: 100%; /* Formulario ocupa todo el ancho disponible */
+    }
+
+    h1 {
+        font-size: 1.3rem; /* Reduce el tamaño del título */
+        margin-bottom: 10px; /* Menor espacio inferior */
+    }
+
+    .mat-form-field {
+        margin-bottom: 10px; /* Espacio más compacto */
+    }
+
+    button {
+        padding: 6px; /* Botón más compacto */
+        font-size: 0.9rem; /* Reduce el tamaño de fuente del botón */
+    }
+}

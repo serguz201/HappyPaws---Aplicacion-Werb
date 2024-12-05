@@ -1,0 +1,83 @@
+/* Contenedor principal */
+div {
+    box-sizing: border-box;
+}
+
+/* Título */
+h1 {
+    padding: 30px 50px 5px 50px;
+    background-color: #76a48f;
+    text-align: center;
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
+}
+
+/* Tabla */
+table {
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    border: solid 3px #76a48f;
+    width: 90%;
+    background-color: white;
+    overflow-x: auto; /* Permite scroll horizontal en pantallas pequeñas */
+}
+
+/* Encabezados */
+th {
+    font-weight: bold;
+    color: #444;
+}
+
+/* Paginador */
+mat-paginator {
+    margin: 10px auto;
+    display: flex;
+    justify-content: center;
+}
+
+/* Media Queries para diseño responsivo */
+
+/* Pantallas medianas */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.5rem; /* Ajusta el tamaño del título */
+        padding: 20px 40px; /* Reduce el padding */
+    }
+
+    table {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+    }
+
+    th, td {
+        padding: 10px; /* Ajusta el padding para reducir el espacio */
+    }
+
+    mat-paginator {
+        font-size: 0.9rem; /* Ajusta el tamaño de la fuente del paginador */
+    }
+}
+
+/* Pantallas pequeñas */
+@media (max-width: 480px) {
+    h1 {
+        font-size: 1.3rem; /* Ajusta el tamaño del título */
+        padding: 15px 30px; /* Reduce aún más el padding */
+    }
+
+    table {
+        width: 100%; /* Asegura que la tabla se ajuste */
+        overflow-x: auto; /* Permite desplazamiento horizontal */
+        font-size: 0.8rem; /* Reduce el tamaño de la fuente */
+    }
+
+    th, td {
+        padding: 8px; /* Reduce el padding en pantallas pequeñas */
+    }
+
+    mat-paginator {
+        font-size: 0.8rem; /* Ajusta el tamaño del texto del paginador */
+    }
+}

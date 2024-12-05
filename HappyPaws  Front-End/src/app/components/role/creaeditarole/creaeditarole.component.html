@@ -1,0 +1,35 @@
+<div>
+  <form [formGroup]="form" (submit)="aceptar()">
+      <h1>Registro</h1>
+
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>Código</mat-label>
+          <input matInput formControlName="hcodigo" readonly>
+          <mat-error *ngIf="form.controls['hcodigo'].hasError('required') && form.controls['hcodigo'].touched">
+              El código es requerido.
+          </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-label>Rol</mat-label>
+          <mat-select formControlName="hrol">
+              <mat-option *ngFor="let role of listaRoles" [value]="role.value">{{role.viewValue}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.controls['hrol'].hasError('required') && form.controls['hrol'].touched">
+              El rol es requerido.
+          </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+          <mat-label>Usuario</mat-label>
+          <mat-select formControlName="huser">
+              <mat-option *ngFor="let user of listaUsuarios" [value]="user.id">{{user.username}}</mat-option>
+          </mat-select>
+          <mat-error *ngIf="form.controls['huser'].hasError('required') && form.controls['huser'].touched">
+              El usuario es requerido.
+          </mat-error>
+      </mat-form-field>
+
+      <button mat-flat-button type="submit">Registrar</button>
+  </form>
+</div>

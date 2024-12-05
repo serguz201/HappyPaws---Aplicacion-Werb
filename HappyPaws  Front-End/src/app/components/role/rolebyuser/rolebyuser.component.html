@@ -1,0 +1,15 @@
+<div class="title-container">
+    <div class="title" style="text-align: center;">
+      <h1>Cantidad usuarios por roles</h1>
+    </div>
+    <div class="chart-container" style="text-align: center;">
+      <canvas
+        baseChart
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [legend]="barChartLegend"
+        [type]="barChartType"
+      ></canvas>
+    </div>
+  </div>

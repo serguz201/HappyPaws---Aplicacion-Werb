@@ -1,0 +1,147 @@
+<div>
+  <form [formGroup]="form" (submit)="aceptar()">
+      <h1>Registro de Albergue</h1>
+
+      <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>Código</mat-label>
+          <input matInput formControlName="hcodigo" readonly>
+          <mat-error *ngIf="form.controls['hcodigo'].hasError('required') && form.controls['hcodigo'].touched">
+              El código es requerido.
+          </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Nombres</mat-label>
+        <input matInput placeholder="Nombres" formControlName="hnombre">
+        <mat-error *ngIf="form.controls['hnombre'].touched">
+          <ng-container *ngIf="form.controls['hnombre'].hasError('required')">
+            Los nombres son requeridos.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hnombre'].hasError('minlength') && !form.controls['hnombre'].hasError('required')">
+            Mas de 2 caracteres.
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Email" formControlName="hemail">
+        <mat-error *ngIf="form.controls['hemail'].touched">
+          <ng-container *ngIf="form.controls['hemail'].hasError('required')">
+            El email es requerido.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hemail'].hasError('email') && !form.controls['hemail'].hasError('required')">
+            Debe contener un arroba.
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Dirección</mat-label>
+        <input matInput placeholder="Dirección" formControlName="hdireccion">
+        <mat-error *ngIf="form.controls['hdireccion'].touched">
+          <ng-container *ngIf="form.controls['hdireccion'].hasError('required')">
+            La dirección es requerida.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hdireccion'].hasError('minlength') && !form.controls['hdireccion'].hasError('required')">
+            Mas de 2 caracteres.
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Teléfono</mat-label>
+        <input matInput placeholder="Teléfono" formControlName="htelefono">
+        <mat-error *ngIf="form.controls['htelefono'].touched">
+          <ng-container *ngIf="form.controls['htelefono'].hasError('required')">
+            El teléfono es requerido.
+          </ng-container>
+          <ng-container *ngIf="form.controls['htelefono'].hasError('pattern') && !form.controls['htelefono'].hasError('required')">
+            Debe contener solo números.
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Capacidad</mat-label>
+        <input matInput placeholder="Capacidad" formControlName="hcapacidad">
+        <mat-error *ngIf="form.controls['hcapacidad'].touched">
+          <ng-container *ngIf="form.controls['hcapacidad'].hasError('required')">
+            La capacidad es requerida.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hcapacidad'].hasError('pattern') && !form.controls['hcapacidad'].hasError('required')">
+            Debe contener solo números.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hcapacidad'].hasError('min') && !form.controls['hcapacidad'].hasError('required') && !form.controls['hcapacidad'].hasError('pattern')">
+            Debe ser mayor a 5.
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Hora de Apertura</mat-label>
+        <input matInput placeholder="Hora de Apertura" formControlName="hapertura">
+        <mat-error *ngIf="form.controls['hapertura'].touched">
+          <ng-container *ngIf="form.controls['hapertura'].hasError('required')">
+            La hora de apertura es requerida.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hapertura'].hasError('pattern') && !form.controls['hapertura'].hasError('required')">
+            Debe contener solo números.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hapertura'].hasError('min') && !form.controls['hapertura'].hasError('required') && !form.controls['hapertura'].hasError('pattern')">
+            Debe ser mayor a 0.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hapertura'].hasError('max') && !form.controls['hapertura'].hasError('required') && !form.controls['hapertura'].hasError('pattern')">
+            Debe ser menor a 24.
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Hora de Cierre</mat-label>
+        <input matInput placeholder="Hora de Cierre" formControlName="hcierre">
+        <mat-error *ngIf="form.controls['hcierre'].touched">
+          <ng-container *ngIf="form.controls['hcierre'].hasError('required')">
+            La hora de cierre es requerida.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hcierre'].hasError('pattern') && !form.controls['hcierre'].hasError('required')">
+            Debe contener solo números.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hcierre'].hasError('min') && !form.controls['hcierre'].hasError('required') && !form.controls['hcierre'].hasError('pattern')">
+            Debe ser mayor a 0.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hcierre'].hasError('max') && !form.controls['hcierre'].hasError('required') && !form.controls['hcierre'].hasError('pattern')">
+            Debe ser menor a 24.
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Web</mat-label>
+        <input matInput placeholder="Web" formControlName="hweb">
+        <mat-error *ngIf="form.controls['hweb'].touched">
+          <ng-container *ngIf="form.controls['hweb'].hasError('required')">
+            La web es requerida.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hweb'].hasError('minlength') && !form.controls['hweb'].hasError('required')">
+            Mas de 2 caracteres
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+  
+      <mat-form-field class="example-full-width">
+        <mat-label>Acreditación</mat-label>
+        <input matInput placeholder="Acreditación" formControlName="hacreditacion">
+        <mat-error *ngIf="form.controls['hacreditacion'].touched">
+          <ng-container *ngIf="form.controls['hacreditacion'].hasError('required')">
+            La acreditación es requerida.
+          </ng-container>
+          <ng-container *ngIf="form.controls['hacreditacion'].hasError('minlength') && !form.controls['hacreditacion'].hasError('required')">
+            Mas de 7 caracteres
+          </ng-container>
+        </mat-error>
+      </mat-form-field>
+
+      <button mat-flat-button type="submit">Registrar</button>
+  </form>
+</div>

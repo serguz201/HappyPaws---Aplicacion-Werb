@@ -1,0 +1,40 @@
+<div>
+  <h1>Listar Albergues Abiertos Ahora</h1>
+  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Dirección Column -->
+      <ng-container matColumnDef="c4">
+          <th mat-header-cell *matHeaderCellDef> Dirección Albergue </th>
+          <td mat-cell *matCellDef="let albergue"> {{albergue.direccionAlbergue}} </td>
+      </ng-container>
+
+      <!-- Hora Apertura Column -->
+      <ng-container matColumnDef="c6">
+          <th mat-header-cell *matHeaderCellDef> Hora Apertura </th>
+          <td mat-cell *matCellDef="let albergue"> {{albergue.horaApertura}} </td>
+      </ng-container>
+
+      <!-- Hora Cierre Column -->
+      <ng-container matColumnDef="c7">
+          <th mat-header-cell *matHeaderCellDef> Hora Cierre </th>
+          <td mat-cell *matCellDef="let albergue"> {{albergue.horaCierre}} </td>
+      </ng-container>
+
+      <!-- Nombre Albergue Column -->
+      <ng-container matColumnDef="c8">
+          <th mat-header-cell *matHeaderCellDef> Nombre Albergue </th>
+          <td mat-cell *matCellDef="let albergue"> {{albergue.nombreAlbergue}} </td>
+      </ng-container>
+
+      <!-- Teléfono Column -->
+      <ng-container matColumnDef="c9">
+          <th mat-header-cell *matHeaderCellDef> Teléfono Albergue </th>
+          <td mat-cell *matCellDef="let albergue"> {{albergue.telefonoAlbergue}} </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator [pageSizeOptions]="[4, 8, 10]" aria-label="Select page"></mat-paginator>
+</div>
